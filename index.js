@@ -1,5 +1,6 @@
 const nav = document.querySelector('.nav')
 const textEl = document.getElementById('text')
+const sidebar = document.querySelector('.sidebar')
 window.addEventListener('scroll', fixNav)
 const text = 'Welcome To My Blog'
 let idx = 1
@@ -8,10 +9,12 @@ let speed = 150
 writeText()
 
 function fixNav() {
-    if (window.scrollY > nav.offsetHeight + 660) {
+    if (window.scrollY > nav.offsetHeight + 640) {
+        sidebar.classList.remove('hide')
         nav.classList.add('active')
     } else {
         nav.classList.remove('active')
+        sidebar.classList.add('hide')
     }
 }
 

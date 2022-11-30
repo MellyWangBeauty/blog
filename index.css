@@ -124,6 +124,7 @@ img {
   width: 350px;
   float: left;
   margin: 1.6vw;
+  margin-top: 30px;
   height: 400px;
   cursor: pointer;
 }
@@ -150,7 +151,7 @@ img {
 
 .card-excerpt {
   color: #777;
-  margin: 10px 0 20px;
+  margin: 30px 0 20px;
 }
 
 .author {
@@ -178,9 +179,9 @@ img {
 }
 
 footer {
-  margin-top: 30px;
+  margin-top: 70px;
   position: absolute;
-  background-color: rgb(80, 29, 78);
+  background-color: rgb(45, 11, 87);
   width: 100%;
   height: 80px;
   z-index: 10;
@@ -212,4 +213,104 @@ footer a {
   text-decoration: none;
   padding: 7px 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.sidebar {
+  width: 15px;
+  height: 400px;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  background-color: #222;
+  border-radius: 0 15px 15px 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.sidebar.hide {
+  display: none;
+}
+
+.sidebar:hover {
+  width: 130px;
+  border-radius: 0 30px 30px 0;
+}
+
+.sidebar:hover li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+/* .sidebar:hover li p {
+  font-size: 10px;
+} */
+
+.sidebar::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgb(98, 32, 178);
+}
+
+.sidebar .top {
+  width: calc(100% - 30px);
+  margin-left: 30px;
+  height: 20%;
+  background-color: #222;
+  border-radius: 0 0 0 20px;
+  transition: 0.2s;
+}
+
+.sidebar .middle {
+  width: calc(100% - 60px);
+  height: 10%;
+  background-color: rgb(98, 32, 178);
+  margin-left: 40px;
+  border-radius: 20px;
+}
+
+.sidebar .bottom {
+  width: calc(100% - 30px);
+  height: 100%;
+  margin-left: 30px;
+  background-color: #222;
+  border-radius: 20px 0 0 0;
+}
+
+.sidebar li {
+  position: absolute;
+  top: var(--t);
+  width: 100%;
+  height: 10%;
+  font-size: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar li a {
+  color: transparent;
+  transition: 0.3s;
+}
+
+.sidebar li:nth-child(1):hover~.top {
+  height: 20%;
+}
+
+.sidebar li:nth-child(2):hover~.top {
+  height: 30%;
+}
+
+.sidebar li:nth-child(3):hover~.top {
+  height: 40%;
+}
+
+.sidebar li:nth-child(4):hover~.top {
+  height: 50%;
 }
